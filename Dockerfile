@@ -8,7 +8,9 @@ WORKDIR /app
 # 拷贝代码
 COPY . /app
 
-RUN npm install
+RUN npm install cnpm -g --registry=https://registry.npm.taobao.org
+
+RUN cnpm install
 
 # 启动node
 CMD ["node", "./src/index.js"]
